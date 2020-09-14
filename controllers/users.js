@@ -19,7 +19,7 @@ exports.user_create = function(req, res, next) {
 exports.user_get = async function(req, res, next) {
   var users = await User.find({})
   var listUsers = users.map((user) => {
-    user.lastname = user.lastname.replace("ñ","nn");//aquí va el mapeo de ordenar los usuarios por orden alfabético
+    user.lastname = user.lastname.replace("ñ","nn");//aquí va el mapeo de ordenar los usuarios por orden alfabético y reemplazar ñ
   return user;
 });
 return listUsers.sort();
